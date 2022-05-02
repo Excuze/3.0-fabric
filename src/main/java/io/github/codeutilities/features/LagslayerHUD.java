@@ -20,10 +20,10 @@ public class LagslayerHUD {
     private static Text numberText;
     private static long lastUpdate;
 
-    public LagslayerHUD() {
+    private LagslayerHUD() {
         throw new RuntimeException("CPU_UsageText is a static class !");
     }
-
+    
     public static void updateCPU(OverlayMessageS2CPacket packet) {
         JsonArray msgArray = Text.Serializer.toJsonTree(packet.getMessage()).getAsJsonObject().getAsJsonArray("extra");
         JsonObject msgPart = msgArray.get(2).getAsJsonObject();
